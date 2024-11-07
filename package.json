@@ -9,6 +9,7 @@
     "@types/node": "^22.7.5",
     "@typescript-eslint/eslint-plugin": "^7.1.1",
     "@typescript-eslint/parser": "^7.1.1",
+    "cross-env": "^7.0.3",
     "eslint": "^8.57.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^9.1.0",
@@ -32,7 +33,7 @@
     "verify": "prettier --check \"**/**.[jt]s?(x)\"",
     "lint": "npx eslint \"**/**.[jt]s?(x)\"",
     "scenario": "SET QA=1 && npx playwright test src/scenarios/CadastroDelivery.spec.ts --output artifacts/media --workers 1",
-    "test": "SET QA=1 && npx playwright test --output artifacts/media --workers 1",
+    "test": "cross-env QA=1 npx playwright test --output artifacts/media --workers 1",
     "show-report": "npx playwright show-report artifacts/report",
     "actions": "npx playwright test --output artifacts/media --workers 1",
     "ci": "npm run clean && npm run format && npm run verify && npm run lint && npm run test"

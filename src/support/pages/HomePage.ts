@@ -11,6 +11,7 @@ export default class HomePage extends BasePage {
       new ChooseDepartureAndDestinationElements(page);
   }
 
+  // Escolher lugar que vai sair e que quer ir
   async chooseFlight(from: string, to: string): Promise<void> {
     await this.ChooseDepartureAndDestinationElements.getDepartureCity().selectOption(
       { label: from }

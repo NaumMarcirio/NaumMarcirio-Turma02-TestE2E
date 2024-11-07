@@ -10,6 +10,7 @@ export default class PurchasePage extends BasePage {
     this.PurchaseFlightElements = new PurchaseFlightElements(page);
   }
 
+  // comprar a passagem
   async completePurchase(name: string, creditCard: string): Promise<void> {
     await this.PurchaseFlightElements.getPassengerNameField().fill(name);
     await this.PurchaseFlightElements.getCreditCardField().fill(creditCard);

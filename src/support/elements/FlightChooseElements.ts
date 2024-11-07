@@ -6,6 +6,7 @@ export default class FlightChooseElements extends BaseElements {
     super(page);
   }
 
+  // escolher o voo
   getFlightOption(flightNumber: string, flight: string): Locator {
     return this.page.locator(
       ` tr >> form[name="${flightNumber}"] >> td:has-text("${flight}") ~ td >> input[value="Choose This Flight"]`
